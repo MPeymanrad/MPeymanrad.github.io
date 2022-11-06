@@ -23,7 +23,7 @@
 .copyright a {
   text-decoration: none !important;
 }
-.start_modal {
+.app_modal {
   position: absolute;
   top: -100%;
   left: 2.5%;
@@ -43,11 +43,11 @@
   cursor: pointer;
   color: #f00;
 }
-.start_modal label {
+.app_modal label {
   font-size: 1.1rem;
   font-weight: 700;
 }
-.start_modal input {
+.app_modal input {
   border: 1px solid #d3d3d3;
   border-radius: 8px;
   outline: none;
@@ -55,7 +55,7 @@
   margin:8px 0;
   font-weight: 700;
 }
-#submit_btn {
+.submit_btn {
   border: none;
   outline: none;
   background-color: #379237;
@@ -89,7 +89,7 @@
   }
 }
 @media only screen and (min-width:768px) {
-  .start_modal {
+  .app_modal {
     width:85%;
     left: 7.5%;
     right: 7.5%;
@@ -103,7 +103,7 @@
   .copyright {
     font-size: 2rem;
   }
-  .start_modal label {
+  .app_modal label {
     width: calc(30%);
     margin: 0 5px;
   }
@@ -119,7 +119,7 @@
   }
 }
 @media only screen and (min-width:1200px) {
-  .start_modal {
+  .app_modal {
     width: 70%;
     left: 15%;
     right: 15%;

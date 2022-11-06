@@ -2,20 +2,38 @@ const $ = document;
 const startBtn = $.getElementById("start_btn");
 const statsBtn = $.getElementById("stats_btn");
 const aboutBtn = $.getElementById("about_btn");
-const goToTimerPageBtn = $.getElementById("submit_btn");
+const newsBtn = $.getElementById("news_btn");
+const goToTimerPageBtn = $.querySelector(".start_modal .submit_btn");
+const signIntoNewsPaperBtn = $.querySelector(".news_modal .submit_btn");
 
-function showModal() {
+function showStartModal() {
   const startModal = $.querySelector(".start_modal");
   const overlay = $.querySelector(".overlay");
-  const modalCloseBtn = $.querySelector(".close_span");
+  const modalCloseBtn = $.querySelector(".start_modal .close_span");
   startModal.classList.add("visible_modal");
   overlay.classList.add("visible_overlay");
 
-  modalCloseBtn.addEventListener("click", hideModal);
-  overlay.addEventListener("click", hideModal);
+  modalCloseBtn.addEventListener("click", hideStartModal);
+  overlay.addEventListener("click", hideStartModal);
 }
-function hideModal() {
+function hideStartModal() {
   const startModal = $.querySelector(".start_modal");
+  const overlay = $.querySelector(".overlay");
+  startModal.classList.remove("visible_modal");
+  overlay.classList.remove("visible_overlay");
+}
+function showNewsModal() {
+  const startModal = $.querySelector(".news_modal");
+  const overlay = $.querySelector(".overlay");
+  const modalCloseBtn = $.querySelector(".news_modal .close_span");
+  startModal.classList.add("visible_modal");
+  overlay.classList.add("visible_overlay");
+
+  modalCloseBtn.addEventListener("click", hideNewsModal);
+  overlay.addEventListener("click", hideNewsModal);
+}
+function hideNewsModal() {
+  const startModal = $.querySelector(".news_modal");
   const overlay = $.querySelector(".overlay");
   startModal.classList.remove("visible_modal");
   overlay.classList.remove("visible_overlay");
@@ -58,7 +76,12 @@ function clearInputs() {
   minuteInput.value = "1";
   secondInput.value = "0";
 }
-startBtn.addEventListener("click", showModal);
+function signIntoNewsPaper() {
+  
+}
+startBtn.addEventListener("click", showStartModal);
+newsBtn.addEventListener("click",showNewsModal)
 statsBtn.addEventListener("click", () => (location.href = "stats.html"));
 aboutBtn.addEventListener("click", () => (location.href = "about.html"));
 goToTimerPageBtn.addEventListener("click", goToTimerPage);
+signIntoNewsPaperBtn.addEventListener("click",signIntoNewsPaper)
