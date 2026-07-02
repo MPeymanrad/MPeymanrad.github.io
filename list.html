@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- used bootstrap icons -->
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/list.css">
+    <link rel="shortcut icon" href="icons/icons8_hummingbird.ico" type="image/x-icon">
+
+    <title>My Species</title>
+</head>
+
+<body>
+    <h1 id="title"></h1>
+
+    <input type="search" name="" id="animal_search" placeholder="جستجوی نام گونه..." class="search_input">
+    <div class="actions_modal" id="insert_modal">
+        <span class="modal_exit">x</span>
+        <div class="modal_forms">
+            <div class="modal_image_data">
+                <form class="modal_form_image">
+                    <img src="images/defualt_animal.png" class="bird_image_holder">
+                    <label for="">تصویر گونه مشاهده شده:</label>
+                    <div class="img_controls">
+                        <input type="file" id="animal_image">
+                        <span class="image_reset_button" title="بازنشانی تصویر" id="insert_img_reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                            </svg>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal_text_data">
+                <form class="modal_form_text">
+                    <label for="animal_name">نام گونه:</label>
+                    <input type="text" id="animal_name">
+                    <label for="animal_location">مکان مشاهده گونه:</label>
+                    <input type="text" id="animal_location">
+                    <label for="animal_date">تاریخ مشاهده گونه</label>
+                    <input type="text" id="animal_date">
+                </form>
+            </div>
+        </div>
+        <div class="modal_btn_container">
+            <button id="complete_modal_action_btn" class="action_modal_btn">افزودن</button>
+        </div>
+    </div>
+    <div class="actions_modal" id="update_modal">
+        <span class="modal_exit" id="update_modal_exit">x</span>
+        <div class="modal_forms">
+            <div class="modal_image_data">
+                <form class="modal_form_image">
+                    <img src="images/defualt_animal.png" class="bird_image_holder" id="image_edit_holder">
+                    <label for="">تصویر گونه مشاهده شده:</label>
+                    <div class="img_controls">
+                        <input type="file" id="update_img_input">
+                        <span class="image_reset_button" title="بازنشانی تصویر" id="update_img_reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                            </svg>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal_text_data">
+                <form class="modal_form_text">
+                    <label for="animal_name_update">نام گونه:</label>
+                    <input type="text" id="animal_name_update">
+                    <label for="animal_location_update">مکان مشاهده گونه:</label>
+                    <input type="text" id="animal_location_update">
+                    <label for="animal_date_update">تاریخ مشاهده گونه</label>
+                    <input type="text" id="animal_date_update">
+                </form>
+            </div>
+        </div>
+        <div class="modal_btn_container">
+            <button id="edit_modal_action_btn" class="action_modal_btn">اعمال تغییرات</button>
+        </div>
+    </div>
+    <div class="ask_delete_modal">
+        <span class="modal_exit delete_modal_exit">x</span>
+        <h3 class="ask_delete_title">آیا اطمینان به حذف دارید؟</h3>
+        <div class="ask_delete_btns">
+            <button class="ask_delete_btn delete_approve_btn">آره</button>
+            <button class="ask_delete_btn delete_cancel_btn">نه</button>
+        </div>
+
+    </div>
+    <div class="overlay"></div>
+    <div class="waiting_overlay">
+        <div class="wait_message">
+            <div class="pulse_loader"></div>
+            <h3 class="waiting_message_text">شکیبا باشید.درحال انجام عملیات...</h3>
+        </div>
+    </div>
+    <div class="data_container">
+        <!-- <div class="animal">
+            <div class="animal_data">
+                <img src="images/images.webp">
+                <div class="animal_text_data">
+                    <h3 class="animal_name">تست</h3>
+                    <h4 class="animal_location">مکان تست</h4>
+                    <h4 class="animal_date">2026/11/5</h4>
+                </div>
+
+            </div>
+            <div class="animal_actions">
+                <span class="animal_edit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                    </svg>
+                </span>
+                <span class="animal_delete">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
+                    </svg>
+                </span>
+            </div>
+        </div> -->
+    </div>
+    <span class="add_btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-plus"
+            viewBox="0 0 16 16">
+            <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+        </svg>
+    </span>
+    <span class="export_excel_btn" title="خروجی گرفتن به فایل اکسل">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+            class="bi bi-file-earmark-spreadsheet-fill" viewBox="0 0 16 16">
+            <path d="M6 12v-2h3v2z" />
+            <path
+                d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M3 9h10v1h-3v2h3v1h-3v2H9v-2H6v2H5v-2H3v-1h2v-2H3z" />
+        </svg>
+    </span>
+</body>
+<script src="scripts/sheetjs.js"></script>
+<script src="scripts/supabase.js"></script>
+<script src="scripts/list.js"></script>
+
+</html>

@@ -1,0 +1,150 @@
+.title_icon {
+    position: absolute;
+    width: 90%;
+    right: 5%;
+    left: 5%;
+    top: 5%;
+}
+
+.title_icon img {
+    width: 200px;
+    height: 200px;
+}
+
+.main_menu_icon {
+    display: flex;
+    justify-content: center;
+}
+
+.main_page_title {
+    text-align: center;
+}
+
+
+.hero_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.menu_btns {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 400px;
+    gap: 20px;
+}
+
+.menu_btn {
+    text-align: center;
+    text-decoration: none;
+    color: #ffff;
+    background-color: #134E8E;
+    padding: 20px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+}
+
+.menu_btn:hover {
+    transform: translateY(-3px);
+}
+
+.open_sign_in_modal_button {
+    position: absolute;
+    top: 85%;
+    right: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #ffff;
+    background-color: #AA1C41;
+    padding: 5px;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+}
+
+.sign_in_modal {
+    top: -100%;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    background-color: #ffff;
+    border-radius: 15px;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+
+
+.sign_in_modal input {
+    border: 1px solid #d3d3d3;
+    border-radius: 15px;
+    padding: 9px 12px;
+    outline: none;
+    margin: 5px 0 5px 0;
+    direction: ltr;
+}
+
+.sign_in_modal form {
+
+    padding: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.visible_modal {
+    top: 20%;
+}
+
+.sign_in_button {
+    margin: 10px 0 10px 0;
+    position: relative;
+    width: 60%;
+    left: 20%;
+    right: 20%;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #ffff;
+    background-color: #AA1C41;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+@media only screen and (min-width:576px) {
+    .title_icon {
+        top: 1%;
+    }
+
+    .title_icon img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .sign_in_modal {
+        width: 80%;
+        left: 10%;
+        right: 10%;
+    }
+}
+
+@media only screen and (min-width:992px) {
+
+    .title_icon img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .sign_in_modal {
+        width: 40%;
+        left: 30%;
+        right: 30%;
+    }
+}
