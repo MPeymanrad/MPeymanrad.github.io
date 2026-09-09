@@ -340,6 +340,8 @@ function checkCategory() {
             title.textContent = "حشرات مشاهده شده";
 
             break;
+        case "plants":
+            title.textContent = "گونه های گیاهی مشاهده شده";
         default:
             window.location.href = "../index.html"
     }
