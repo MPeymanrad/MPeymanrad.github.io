@@ -342,6 +342,8 @@ function checkCategory() {
             break;
         case "plants":
             title.textContent = "گونه های گیاهی مشاهده شده";
+
+            break;
         default:
             window.location.href = "../index.html"
     }
